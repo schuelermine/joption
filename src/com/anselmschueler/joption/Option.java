@@ -223,7 +223,7 @@ public sealed interface Option<T> extends Iterable<T> permits Option.None, Optio
             return new Spliter();
         }
 
-        class Iter implements Iterator<T> {
+        public class Iter implements Iterator<T> {
             public boolean hasNext() {
                 return false;
             }
@@ -231,8 +231,7 @@ public sealed interface Option<T> extends Iterable<T> permits Option.None, Optio
                 throw new NoSuchElementException();
             }
         }
-
-        class Spliter implements Spliterator<T> {
+        private class Spliter implements Spliterator<T> {
             public int characteristics() {
                 return Spliterator.CONCURRENT
                     | Spliterator.DISTINCT
@@ -418,7 +417,7 @@ public sealed interface Option<T> extends Iterable<T> permits Option.None, Optio
             return new Spliter(value);
         }
 
-        class Iter implements Iterator<T> {
+        private class Iter implements Iterator<T> {
             private T value;
             private boolean done;
 
@@ -439,8 +438,7 @@ public sealed interface Option<T> extends Iterable<T> permits Option.None, Optio
                 }
             }
         }
-
-        class Spliter implements Spliterator<T> {
+        private class Spliter implements Spliterator<T> {
             private T value;
             private boolean done;
 
