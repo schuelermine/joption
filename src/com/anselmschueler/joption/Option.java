@@ -11,7 +11,6 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public sealed interface Option<T> extends Iterable<T> permits Option.None, Option.Some {
-    public enum Never {}
     public enum Variant {
         SOME,
         NONE
