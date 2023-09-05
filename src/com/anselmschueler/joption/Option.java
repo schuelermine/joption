@@ -7,6 +7,11 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public sealed interface Option<T> extends Iterable<T> permits None, Some {
+    public enum Variant {
+        SOME,
+        NONE
+    }
+
     public T unwrap() throws NoneOptionException;
 
     public T unwrapOrNull();

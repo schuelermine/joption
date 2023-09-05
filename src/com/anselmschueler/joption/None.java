@@ -23,7 +23,7 @@ public final class None<T> implements Option<T> {
 
     @Override
     public String toString() {
-        return "None[]";
+        return "None";
     }
 
     public T unwrap() throws NoneOptionException {
